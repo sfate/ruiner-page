@@ -1,0 +1,119 @@
+@-webkit-keyframes store-letter-1 {
+  0%, 12%, 18.999%, 23%, 31.999%, 37%, 44.999%, 46%, 49.999%, 51%, 58.999%, 61%, 68.999%, 71%, 85.999%, 96%, 100% {
+    opacity:0.99;
+  }
+  19%,22.99%,32%,36.999%,45%,45.999%,50%,50.99%,59%,60.999%,69%,70.999%,86%,95.999% {
+    opacity:0.4;
+  }
+}
+
+@-webkit-keyframes store-letter-2 {
+  0%,62.999%,64%,64.999%,70%,70.999%,100% {
+    opacity:0.99;
+  }
+  15%,63%,63.999%,65%,69.999%,71% {
+    opacity:0.4;
+  }
+}
+
+@-webkit-keyframes train-move {
+  0% {
+    transform: translate(1920px, -390px);
+  }
+  50% {
+    transform: translate(-1100px, 652px);
+  }
+  100% {
+    transform: translate(-1100px, 652px);
+  }
+  101% {
+    transition: '';
+    transform: translate(1920px, -390px);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url(img-tmp/story-10_02.png);
+  background-color: #536D6C;
+}
+
+.logo {
+  position: absolute;
+  transform: translate(10px, 10px);
+  width: 200px;
+  height: 50px;
+  z-index: 3;
+  background: url('http://ruinergame.com/img/main/ruiner-logo.png') no-repeat;
+  background-size: contain;
+  transition: -webkit-filter 1.3s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.logo-shadow {
+  z-index: 2;
+  -webkit-filter: blur(5px);
+}
+
+.logo:hover {
+  -webkit-filter: blur(25px);
+}
+
+.container {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+}
+
+.sign {
+  position: absolute;
+  transform: translate(431px, 261px);
+}
+
+.train, .rails {
+  position: absolute;
+}
+
+.rails {
+  z-index: 2;
+}
+
+.train {
+  transition: transform ease 5.3s;
+  transform: translate(1920px, -390px);
+  -webkit-animation: train-move 10s linear infinite;
+}
+
+.store {
+  position: absolute;
+  transform: translate(1000px, 20px);
+  z-index: 3;
+}
+
+.store-letter-1, .store-letter-2 {
+  position: absolute;
+  z-index: 4;
+}
+
+.store-letter-1 {
+  transform: translate(1155px, 117px);
+  -webkit-animation: store-letter-1 10s linear infinite;
+}
+
+.store-letter-2 {
+  transform: translate(1445px, 40px);
+  -webkit-animation: store-letter-2 11s linear infinite;
+}
+
+.pipes {
+  position: fixed;
+  background: url(img-tmp/story-pipes-2.png) no-repeat;
+  width: 1290px;
+  height: 823px;
+  bottom: 0;
+  background-size: cover;
+  transform: translate(0, 500px);
+  transition: background-position .1s ease;
+  z-index: 5;
+}
